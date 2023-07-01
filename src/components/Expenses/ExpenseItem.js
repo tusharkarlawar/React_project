@@ -4,6 +4,16 @@ import Card from '../UI/Card';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
+  //  fuction clickHandler() {} //
+    const clickHandler = () => {
+        console.log('Clicked!!!');
+    };
+    const clickDelete = () => {
+      
+      };
+      
+
+
     
     
     return (
@@ -15,7 +25,8 @@ const ExpenseItem = (props) => {
                <div className="expense-item__price">{props.location}</div>
                <div className="expense-item__price">${props.amount}</div>
             </div>
-            
+            <button onClick={clickHandler}>Change Title</button>
+            <button onClick={clickDelete}>Delete Expenses</button>
         </Card>
 
     );
