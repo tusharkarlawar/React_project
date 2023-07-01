@@ -7,13 +7,13 @@ import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
   //  fuction clickHandler() {} //
-  const [amount, setAmount] = useState(props.amount);
+  const [title, setTitle] = useState(props.title);
   console.log('ExpenseItem evaluated by React')
 
   const clickHandler = () => {
-    setAmount(100);
+    setTitle('Update!');
 
-    console.log(amount);
+    console.log(title);
    };
    
       
@@ -26,11 +26,11 @@ const ExpenseItem = (props) => {
           <ExpenseDate date={props.date} />
           
           <div className="expense-item__description">
-               <h2>{props.title}</h2>
+               <h2>{title}</h2>
                <div className="expense-item__price">{props.location}</div>
-               <div className="expense-item__price">${amount}</div>
+               <div className="expense-item__price">${props.amount}</div>
             </div>
-            <button onClick={clickHandler}>Change Amount to $100</button>
+            <button onClick={clickHandler}>Change Title</button>
             
         </Card>
 
