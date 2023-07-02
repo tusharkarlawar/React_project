@@ -2,59 +2,73 @@ import React, {useState} from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm =  () => {
-    //const [enteredTitle, setEnteredTitle] = useState('');
-    //const [enteredAmount, setEnteredAmount] = useState('');
-    //const [enteredDate, setEnteredDate] = useState('');
-    //const [enteredLocation, setEnteredLocation] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
+    const [enteredLocation, setEnteredLocation] = useState('');
 
-    const [userInput, setUserInput] = useState({
+    /* const [userInput, setUserInput] = useState({
         enteredTitle: '',
         enteredAmount: '',
         enteredDate: '',
         enteredLocation: '',
 
-    });
+    });   */
 
     const titleChangeHandler = (event) => {
-        //setEnteredTitle(event.target.value);
-        setUserInput({
+        setEnteredTitle(event.target.value);
+      /*  setUserInput({
             ...userInput,
             enteredTitle: event.target.value,
 
-        });
+        });   */
     };
 
     
     const amountChangeHandler = (event) => {
-        //setEnteredAmount(event.target.value);
-        setUserInput({
+        setEnteredAmount(event.target.value);
+     /*   setUserInput({
             ...userInput,
             enteredAmount: event.target.value,
 
-        });
+        });  */
     };
 
     const dateChangeHandler = (event) => {
-        //setEnteredDate(event.target.value);
-        setUserInput({
+        setEnteredDate(event.target.value);
+      /*  setUserInput({
             ...userInput,
             enteredDate: event.target.value,
 
-        });
+        });  */
     };
 
     const locationChangeHandler = (event) => {
-        //setEnteredLocation(event.target.value);
-        setUserInput({
+        setEnteredLocation(event.target.value);
+       /* setUserInput({
             ...userInput,
             enteredLocation: event.target.value,
 
-        });
+        });  */
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date (enteredDate),
+            location: enteredLocation
+            
+        };
+
+        console.log(expenseData);
     };
 
 
     return (
-    <form>
+    <form onSubmit={submitHandler}>
         
         <div className="new-expense__controls">
             <div className="new-expense__control">
